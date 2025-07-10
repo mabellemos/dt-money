@@ -1,17 +1,14 @@
-
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { Providers } from "@/components/Providers";
 
-
-
 const poppins = Poppins({
   subsets: ["latin"],
-  weight:["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
   display: "swap",
-})
+});
 
 export const metadata: Metadata = {
   title: "DT Money",
@@ -25,13 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} antialiased`}
-      >
-        <Providers>
-          {children}
-        </Providers>
-        
+      <body className={`${poppins.variable} antialiased`}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
